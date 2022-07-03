@@ -1,0 +1,45 @@
+<ion-menu menuId="main-menu" content-id="main" >
+
+    <ion-header>
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-buttons slot="start" >
+            <ion-button (click)="logout()">
+              <ion-icon name="log-out-outline" slot="icon-only" color="dark"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-label>
+            Uitloggen
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-buttons slot="start"  >
+            <ion-button (click)="toggleIcon()">
+              <ion-icon  [name]="iconMoon ? 'moon-outline' : 'sunny-outline'" slot="icon-only" color="medium"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-label>
+            {{this.modeText}}
+          </ion-label>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-toggle slot="start" [(ngModel)]="darkMode" (ionChange)="toggleDarkMode()">
+
+          </ion-toggle>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+
+
+

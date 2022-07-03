@@ -1,0 +1,6 @@
+{
+	"appId": "com.mangelschots.dries.twitterproject",
+	"appName": "twitterProject",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

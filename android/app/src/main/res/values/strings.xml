@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">twitterProject</string>
+    <string name="title_activity_main">twitterProject</string>
+    <string name="package_name">com.mangelschots.dries.twitterproject</string>
+    <string name="custom_url_scheme">com.mangelschots.dries.twitterproject</string>
+</resources>

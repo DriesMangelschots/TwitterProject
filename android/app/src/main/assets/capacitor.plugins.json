@@ -1,0 +1,10 @@
+[
+	{
+		"pkg": "@robingenz/capacitor-firebase-authentication",
+		"classpath": "dev.robingenz.capacitorjs.plugins.firebase.auth.FirebaseAuthenticationPlugin"
+	},
+	{
+		"pkg": "capacitor-firebase-auth",
+		"classpath": "com.baumblatt.capacitor.firebase.auth.CapacitorFirebaseAuth"
+	}
+]
