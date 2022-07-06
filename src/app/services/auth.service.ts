@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {Router} from '@angular/router';
@@ -5,6 +6,7 @@ import {Auth, User} from '@angular/fire/auth';
 import {signInWithEmailAndPassword, createUserWithEmailAndPassword} from '@angular/fire/auth';
 import {LoadingController} from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 
 
@@ -33,28 +35,27 @@ export class AuthService {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
   emailLogin(data) {
     return signInWithEmailAndPassword(this.auth, data.email, data.password);
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
+
   emailSignup(data) {
     return createUserWithEmailAndPassword(this.auth, data.email, data.password);
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
+
   storeData(data) {
     return this.firestore.collection("twitterAccounts").doc(data.uid).set(data);
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
+
   retrieveDate(data) {
     return this.firestore.collection("twitterAccounts").doc(data.uid).valueChanges();
   }
 
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
+
   login(email: string, password: string) {
     if (email && password) {
 
@@ -69,12 +70,36 @@ export class AuthService {
   }
 
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
+
   signup() {
     this.router.navigateByUrl('signup');
   }
 
 
+  // dkkfjk
+  sendEmailVerification() {
+    return this.angularFireAuth.currentUser.then((user) => user.sendEmailVerification().then(() => {
+        this.router.navigate(['/email-verify']);
+      }));
+  }
+
+   // dkefkf
+
+   passwordReset(passwordResetEmail) {
+    return this.angularFireAuth
+      .sendPasswordResetEmail(passwordResetEmail)
+      .then(() => {
+        window.alert('An email has been sent please check your inbox.');
+      })
+      .catch((error)=> {
+        window.alert(error + ' An expected error has occured');
+      });
+  }
+   // Email verified and logged in return true
+   get isLoggedIn(): boolean {
+     const user = JSON.parse(localStorage.getItem('user')!);
+     return user != null && user.emailVerified !== false ? true : false;
+   }
 
 }
 

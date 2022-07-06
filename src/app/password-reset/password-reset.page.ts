@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {Router} from '@angular/router';
 import { ILogin } from '../datatypes/login';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-password-reset',
@@ -13,7 +14,7 @@ export class PasswordResetPage implements OnInit {
   email: ILogin;
 
 
-  constructor(private auth: AngularFireAuth, private router: Router) {
+  constructor(public auth: AuthService, public router: Router) {
 
 
   }
