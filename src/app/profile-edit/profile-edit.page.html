@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-buttons slot="start">
+  <ion-back-button defaultHref="/tab3"></ion-back-button>
+</ion-buttons>
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <form>
+      <ion-list>
+        <ion-item>
+        <ion-label position="stacked">
+          Username
+        </ion-label>
+        <ion-input required type="text">
+        </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="stacked">
+          Email
+        </ion-label>
+        <ion-input required type="email">
+        </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="stacked">
+          PhoneNumber
+        </ion-label>
+        <ion-input required type="tel">
+        </ion-input>
+      </ion-item>
+      </ion-list>
+
+      <ion-button type="submit" expand="block" shape="round">
+        Save
+      </ion-button>
+    </form>
+  </ion-card>
+
+</ion-content>

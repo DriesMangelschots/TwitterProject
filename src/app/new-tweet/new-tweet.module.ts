@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UserPageRoutingModule } from './user-routing.module';
+import { NewTweetPageRoutingModule } from './new-tweet-routing.module';
 
-import { UserPage } from './user.page';
+import { NewTweetPage } from './new-tweet.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UserPageRoutingModule
+    NewTweetPageRoutingModule
   ],
-  declarations: [UserPage]
+  declarations: [NewTweetPage]
 })
-export class UserPageModule {}
+export class NewTweetPageModule {}

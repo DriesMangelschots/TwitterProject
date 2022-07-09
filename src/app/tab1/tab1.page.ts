@@ -2,6 +2,9 @@ import {Component, Renderer2} from '@angular/core';
 import {Router} from '@angular/router';
 import {Auth} from '@angular/fire/auth';
 import {MenuController} from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+
+
 
 @Component({
   selector: 'app-tab1',
@@ -13,8 +16,8 @@ export class Tab1Page {
 
   iconMoon: boolean = true;
 
-  constructor(private auth: Auth, private router: Router,
-              private renderer: Renderer2, private menu: MenuController) {
+  constructor(public auth: Auth, public router: Router,
+              public renderer: Renderer2, public menu: MenuController, public authServ: AuthService) {
 
   }
 
@@ -26,6 +29,10 @@ export class Tab1Page {
     })
   }
 
+  getDataUser() {
+    console.log(this.auth.currentUser.email);
+    return this.auth.currentUser.email;
+  }; 
 openFirst = () => {
     this.menu.enable(true,'first');
     this.menu.open('first');

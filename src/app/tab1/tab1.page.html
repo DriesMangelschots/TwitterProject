@@ -1,49 +1,25 @@
+<ion-header>
 <ion-toolbar>
-<ion-buttons slot="start">
-  <ion-menu-button>
+  <ion-buttons slot="start">
+    <ion-menu-button>
 
-  </ion-menu-button>
-</ion-buttons>
-  </ion-toolbar>
+    </ion-menu-button>
+  </ion-buttons>
+  <p class="ion-margin" slot="end">{{this.getDataUser()}}</p>
+</ion-toolbar>
+</ion-header>
 
-<ion-grid>
-  <ion-row>
-    <ion-col>
-
-      <ion-card color="light" class="ion-text-center">
-        <div class="img-wrapper">
-          <ion-avatar slot="start" class="avatar">
-            <img src="https://www.gamasutra.com/db_area/images/news/2018/Jun/320213/supermario64thumb1.jpg" alt="foto">
-
-          </ion-avatar>
-
-        </div>
-        <ion-card-content class="ion-text-center">
-          <h2>Drieske</h2>
-          <ion-text color="medium">
-            <div style="display: flex;" class="ion-justify-content-center">
-              <ion-icon name="location-outline" color="medium">
-              </ion-icon>
-              <p>België, Antwerpen, Mol</p>
-            </div>
-          </ion-text>
-          <ion-icon name="create-outline"></ion-icon>
-        </ion-card-content>
-      </ion-card>
-
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<ion-content>
 
 
 
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-
-    </ion-toolbar>
-  </ion-header>
-
-
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
+
+
+
+

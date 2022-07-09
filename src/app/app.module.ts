@@ -18,6 +18,8 @@ import {NewsService} from './services/news.service';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
+
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   entryComponents: [],

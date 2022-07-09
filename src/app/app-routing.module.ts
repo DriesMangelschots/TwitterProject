@@ -26,13 +26,18 @@ const routes: Routes = [
 
   },
   {
-    path: 'user',
-    loadChildren: () => import('./user/user.module').then(m => m.UserPageModule)
-  },
-  {
     path: 'password-reset',
     loadChildren: () => import('./password-reset/password-reset.module').then( m => m.PasswordResetPageModule)
   },
+  {
+    path: 'profile-edit',
+    loadChildren: () => import('./profile-edit/profile-edit.module').then( m => m.ProfileEditPageModule)
+  },
+  {
+    path: 'new-tweet',
+    loadChildren: () => import('./new-tweet/new-tweet.module').then( m => m.NewTweetPageModule)
+  },
+
 
 ];
 

@@ -27,7 +27,7 @@ export class AuthService {
     });
   }
 
-  private async user(user: User): Promise<void> {
+  public async user(user: User): Promise<void> {
     if (user) {
       await this.router.navigate(['/tabs']);
     } else {

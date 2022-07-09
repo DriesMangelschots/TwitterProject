@@ -16,10 +16,11 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {}
 
-  darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 
   iconMoon: boolean = true;
-  modeText: string ='Lichte mode';
+  modeText: string = 'Lichte mode';
 
 
 

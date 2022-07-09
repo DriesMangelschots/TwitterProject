@@ -1,22 +1,25 @@
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profile Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-    </ion-menu-button>
-  </ion-buttons>
-</ion-toolbar>
-<ion-title class="ion-text-center" size="large">
-  <ion-icon name="logo-twitter"  color="primary" size="large"></ion-icon>
-</ion-title>
+<ion-content class="ion-padding">
 
+  <ion-card>
+    <ion-card-content>
+      <ion-button (click)="goToEditPage()" slot="end">
+      <ion-icon name="pencil-outline" ></ion-icon>
+    </ion-button>
+      <ion-avatar slot="start" class="avatar">
+        <img src="https://www.gamasutra.com/db_area/images/news/2018/Jun/320213/supermario64thumb1.jpg" alt="foto">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-
-    </ion-toolbar>
-  </ion-header>
-
-
+      </ion-avatar>
+    <h2 class="ion-text-center">Username: Drieske</h2>
+      <h2 class="ion-text-center">Email: Drieske@gmail.com</h2>
+      <h2 class="ion-text-center">PhoneNumber: 047969372</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
-

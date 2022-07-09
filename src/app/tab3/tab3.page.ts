@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(private afs: AngularFirestore, private router: Router ){
+  }
 
+
+  goToEditPage() {
+    this.router.navigate(['/profile-edit']);
+  }
 }
