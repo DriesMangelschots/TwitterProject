@@ -26,23 +26,26 @@ export class Tab1Page {
       this.router.navigateByUrl('/');
       }).catch(error => {
         console.log(error);
-    })
+    });
   }
 
   getDataUser() {
     console.log(this.auth.currentUser.email);
     return this.auth.currentUser.email;
-  }; 
+  };
+  makeNewTweet() {
+    this.router.navigateByUrl('new-tweet');
+  }
 openFirst = () => {
     this.menu.enable(true,'first');
     this.menu.open('first');
-}
+};
 openEnd = () => {
     this.menu.open('end');
-}
+};
 openCustom = () => {
     this.menu.enable(true,'custom');
     this.menu.open('custom');
-}
+};
 
 }

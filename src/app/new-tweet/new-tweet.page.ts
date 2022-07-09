@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from 'firebase/auth';
+import { ITweet } from '../datatypes/tweet';
+
 
 @Component({
   selector: 'app-new-tweet',
@@ -7,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTweetPage implements OnInit {
 
-  @Output() newZeet = new EventEmitter<Omit<IZeet, 'id'>>();
+  @Output() newTweet = new EventEmitter<Omit<ITweet, 'id'>>();
   @Input() user!: User;
-  zeetMessage = '';
+  tweetMessage = '';
   constructor() { }
 
-  get isZeetEmpty() {
-    return this.zeetMessage.trim().length === 0;
+  get isTweetEmpty() {
+    return this.tweetMessage.trim().length === 0;
   }
   ngOnInit() {
   }
@@ -21,14 +24,13 @@ export class NewTweetPage implements OnInit {
 
   onSubmit($event: Event) {
     $event.preventDefault();
-    if (this.isZeetEmpty) {
+    if (this.isTweetEmpty) {
       return;
     }
-    this.newZeet.emit({
-      content: this.zeetMessage,
+    this.newTweet.emit({
+      content: this.tweetMessage,
       likedBy: [],
       commentedBy: [],
-      createdAt: formatISO(new Date()),
       by: {
         id: this.user.uid,
         name: this.user.displayName || this.user.email || '',
@@ -36,6 +38,8 @@ export class NewTweetPage implements OnInit {
         profileURL: this.user.photoURL || '',
       },
     });
-    this.zeetMessage = '';
+    this.tweetMessage = '';
   }
 }
+
+
